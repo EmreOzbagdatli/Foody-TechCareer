@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 
 class FoodDetailViewModel {
+    
     var cartItems: [FoodsCart] = []
     var totalPrice: Int = 0
 
@@ -32,8 +33,8 @@ class FoodDetailViewModel {
     
     func addCart() {
 
-        FoodListManager.shared.addToCart(yemek_adi: "Ayran", yemek_resim_adi: "ayran.png", yemek_fiyat: 2, yemek_siparis_adet: 2, kullanici_adi: "mali") { result in
-        }
+//        FoodListManager.shared.addToCart(yemek_adi: "Ayrxan", yemek_resim_adi: "ayrxan.png", yemek_fiyat: 2, yemek_siparis_adet: 2, kullanici_adi: "mali") { result in
+//        }
     }
     
     func deleteItemFromCart() {            

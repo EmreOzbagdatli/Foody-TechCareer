@@ -141,7 +141,7 @@
 				1E74B4592AD5737D00EFD304 /* Tabbar */,
 				1E74B4442AD569C000EFD304 /* FoodList */,
 				1E74B4482AD56A4C00EFD304 /* FoodDetail */,
-				1E74B4472AD56A1400EFD304 /* Chart */,
+				1E74B4472AD56A1400EFD304 /* Card */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -181,13 +181,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		1E74B4472AD56A1400EFD304 /* Chart */ = {
+		1E74B4472AD56A1400EFD304 /* Card */ = {
 			isa = PBXGroup;
 			children = (
 				1E74B44C2AD56A6700EFD304 /* View */,
 				1E74B44B2AD56A6300EFD304 /* ViewModel */,
 			);
-			path = Chart;
+			path = Card;
 			sourceTree = "<group>";
 		};
 		1E74B4482AD56A4C00EFD304 /* FoodDetail */ = {

@@ -16,7 +16,6 @@ class FoodDetailViewController: UIViewController {
     
     var count :Int = 0
     var resimAdi: String = ""
-    @IBOutlet private weak var urunDetayLabel: UILabel!
     @IBOutlet private weak var totalLabel: UILabel!
     @IBOutlet private weak var urunNameLabel: UILabel!
     @IBOutlet private weak var urunImageView: UIImageView!
@@ -69,10 +68,6 @@ class FoodDetailViewController: UIViewController {
         FoodListManager.shared.addToCart(yemek_adi: urunNameLabel.text!, yemek_resim_adi:resimAdi, yemek_fiyat: Int(priceLabel.text!) ?? 0, yemek_siparis_adet: count, kullanici_adi: "mali") { result in
         }
         viewModel.addCart()
-        
-        
-        
-        
 
     }
 

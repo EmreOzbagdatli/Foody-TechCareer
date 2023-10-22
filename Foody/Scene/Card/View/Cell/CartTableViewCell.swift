@@ -9,7 +9,7 @@ import UIKit
 
 class CartTableViewCell: UITableViewCell {
 
-    var viewModel = FoodDetailViewModel()
+    var onTapAction: (() -> Void)?
 
     @IBOutlet weak var cartImageView: UIImageView!
     @IBOutlet weak var cartFoodName: UILabel!
@@ -34,8 +34,7 @@ class CartTableViewCell: UITableViewCell {
 
     
     @IBAction func deleteButton(_ sender: Any) {
-        
-        viewModel.deleteItemFromCart()
+        onTapAction?()
     }
     
 }

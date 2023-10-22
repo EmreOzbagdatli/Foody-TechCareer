@@ -10,14 +10,11 @@ import UIKit
 class FoodCardViewController: UIViewController {
     
    var viewModel = FoodCardViewModel()
-    var cartFoods: [FoodsCart] = []
-    var cartFoodsTwo: FoodsCartResponse = FoodsCartResponse()
 
     @IBOutlet weak var cartTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         cartTableView.dataSource = self
         cartTableView.delegate = self
@@ -27,11 +24,12 @@ class FoodCardViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
           viewModel.showCart(kullaniciAdi: "mali") { [weak self] in
-              self?.cartTableView.reloadData()
-        
+              DispatchQueue.main.async {
+                  self?.cartTableView.reloadData()
+              }
+              
           }
       }
-   
 }
 
 
@@ -49,14 +47,24 @@ extension FoodCardViewController:UITableViewDelegate,UITableViewDataSource{
   
         cell.cartPrice.text = yemekDetay.yemek_fiyat
         cell.cartFoodName.text = yemekDetay.yemek_adi
+        cell.cartTotal.text = "Ürün Adet: \(yemekDetay.yemek_siparis_adet!)"
  
        
-               if let url = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(yemekDetay.yemek_resim_adi!)") {
-                   DispatchQueue.main.async {
-                       cell.cartImageView.kf.setImage(with: url)
-                       
-                   }
-               }
+       if let url = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(yemekDetay.yemek_resim_adi!)") {
+           DispatchQueue.main.async {
+               cell.cartImageView.kf.setImage(with: url)
+               
+           }
+       }
+        
+        cell.onTapAction = { [weak self] in
+            self?.viewModel.removeFromCart(cart: yemekDetay) {
+                DispatchQueue.main.async {
+                    self?.cartTableView.reloadData()
+                }
+            }
+            
+        }
 
         return cell
     }
