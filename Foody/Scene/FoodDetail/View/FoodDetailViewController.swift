@@ -41,7 +41,7 @@ class FoodDetailViewController: UIViewController {
             }
             priceLabel.text = "\(f.yemek_fiyat)₺"
             urunNameLabel.text = f.yemek_adi
-            totalLabel.text = "adet"
+            totalLabel.text = ""
             
             
             

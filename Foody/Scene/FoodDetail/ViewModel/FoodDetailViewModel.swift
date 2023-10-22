@@ -39,8 +39,8 @@ class FoodDetailViewModel {
     
     func deleteItemFromCart() {            
 
-        FoodListManager.shared.removeFromCart(sepetYemekID:213213 , kullaniciAdi: "mali") { result in
-        }
+//        FoodListManager.shared.removeFromCart(sepetYemekID:213213 , kullaniciAdi: "mali") { result in
+//        }
     }
     
     func showCart() {
